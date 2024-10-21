@@ -10,7 +10,7 @@ import LandingPage from './pages/LandingPage.tsx';
 import ErrorPage from './components/Error';      
 import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
-import './App.css';
+
 
 const router = createBrowserRouter([
   {
@@ -59,3 +59,6 @@ const App = () => {
 
 export default App;
 
+<div className="bg-red-500 p-4">
+  <h1 className="text-white text-3xl">Tailwind Test</h1>
+</div>

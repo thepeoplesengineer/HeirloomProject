@@ -22,84 +22,68 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-cover bg-left bg-no-repeat p-4 relative" style={{ backgroundImage: `url(${HeirloomNav})` }}>
+    <header
+      className="bg-cover bg-left bg-no-repeat p-4 relative flex flex-col md:flex-row md:justify-between md:items-center"
+      style={{ backgroundImage: `url(${HeirloomNav})` }}
+    >
       {/* Heirloom Title */}
       <img
         src={HeirloomNavTitle}
         alt="Heirloom"
-        className="absolute md:left-0 md:pl-4 left-1/2 transform md:translate-x-0 -translate-x-1/2 top-1 w-auto h-20"
+        className="h-16 md:h-20 w-auto md:self-start md:pl-4 left-1/2 transform -translate-x-1/2 md:translate-x-0 mt-4 md:mt-0"
       />
 
-      <div className="container mx-auto flex flex-col md:flex-row md:justify-end items-center mt-12 md:mt-0">
-        <nav>
-          <ul className="flex justify-center space-x-2 items-center">
-            {!isLoggedIn ? (
-              <>
-                <li>
-                  <Link
-                    to="/login"
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/register"
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    Register
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition flex items-center justify-center"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    <FaTwitter />
-                  </a>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link
-                    to="/dashboard"
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/profile"
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    onClick={() => {
-                      localStorage.removeItem('token');
-                      setIsLoggedIn(false);
-                    }}
-                    className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition"
-                    style={{ display: 'inline-block', width: '100%' }}
-                  >
-                    Logout
-                  </button>
-                </li>
-              </>
-            )}
-          </ul>
+      {/* Navigation */}
+      <div className="w-full flex justify-center md:justify-end mt-4 md:mt-0 space-x-2 md:space-x-4">
+        <nav className="flex space-x-4 items-center">
+          {!isLoggedIn ? (
+            <>
+              <Link
+                to="/login"
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300"
+              >
+                Register
+              </Link>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300 flex items-center justify-center"
+              >
+                <FaTwitter />
+              </a>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/dashboard"
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300"
+              >
+                Dashboard
+              </Link>
+              <Link
+                to="/profile"
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300"
+              >
+                Profile
+              </Link>
+              <button
+                onClick={() => {
+                  localStorage.removeItem('token');
+                  setIsLoggedIn(false);
+                }}
+                className="custom-font text-sm md:text-lg text-eggshell border border-eggshell px-2 md:px-4 py-1 md:py-2 rounded-full hover:bg-eggshell hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg duration-300"
+              >
+                Logout
+              </button>
+            </>
+          )}
         </nav>
       </div>
     </header>
@@ -107,3 +91,5 @@ const Header = () => {
 };
 
 export default Header;
+
+
