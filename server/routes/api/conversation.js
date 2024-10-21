@@ -1,6 +1,6 @@
 import express from 'express';
 import { startConversation, resetConversation } from '../../controllers/conversationController.js';
-import authenticateToken from '../../middleware/auth.js'; // Ensure route protection
+import authenticateToken from '../../middleware/authMiddleware.js'; // Ensure route protection
 
 const router = express.Router();
 

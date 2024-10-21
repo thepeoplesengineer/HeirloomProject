@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { FaTwitter } from 'react-icons/fa';
+import HeirloomNav from '../assets/HeirloomNav.svg';
+import HeirloomNavTitle from '../assets/HeirloomNavTitle.svg';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,10 +22,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-cover bg-left bg-no-repeat p-4 relative" style={{ backgroundImage: 'url(/HeirloomNav.svg)' }}>
+    <header className="bg-cover bg-left bg-no-repeat p-4 relative" style={{ backgroundImage: `url(${HeirloomNav})` }}>
       {/* Heirloom Title */}
       <img
-        src="/HeirloomNavTitle.svg"
+        src={HeirloomNavTitle}
         alt="Heirloom"
         className="absolute md:left-0 md:pl-4 left-1/2 transform md:translate-x-0 -translate-x-1/2 top-1 w-auto h-20"
       />

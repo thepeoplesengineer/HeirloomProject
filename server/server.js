@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import sequelize from './config/database.js'; 
+import sequelize from './config/connection.js'; 
 import authRoutes from './routes/api/auth.js';
 import memoirRoutes from './routes/api/memoir.js';
 import preInterviewRoutes from './routes/api/preInterview.js';

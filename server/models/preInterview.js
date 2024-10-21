@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
+import sequelize from '../config/connection.js';
 import User from './User.js'; 
 
 const PreInterview = sequelize.define('PreInterview', {

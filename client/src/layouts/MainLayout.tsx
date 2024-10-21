@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import backgroundImage from '../public/InternalLandingBG.svg'; 
+import backgroundImage from '../assets/InternalLandingBG.svg'; 
 
 const MainLayout = () => {
   const location = useLocation();

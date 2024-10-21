@@ -1,7 +1,7 @@
 import express from 'express';
 import { savePreInterview, getPreInterview } from '../../controllers/preInterviewController.js';
 
-import authenticateToken from '../../middleware/auth.js';  // Ensure route is protected
+import authenticateToken from '../../middleware/authMiddleware.js';  // Ensure route is protected
 
 const router = express.Router();
 
