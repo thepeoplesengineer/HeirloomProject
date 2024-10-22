@@ -22,13 +22,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the frontend (adjust the path as necessary)
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'ok' });
-});
+// Serve static files from the frontend
+app.use(express.static(path.join(__dirname, '../client/dist'))); // Update path to match client directory
 
 // API routes
 app.use('/api/auth', authRoutes);
@@ -38,7 +33,7 @@ app.use('/api/conversation', conversationRoutes);
 
 // Serve the frontend for any route that isn't an API route
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html')); // Update this path as well
 });
 
 // Sync Sequelize with database
