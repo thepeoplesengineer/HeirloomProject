@@ -1,0 +1,20 @@
+# render.yaml
+services:
+  - type: web
+    name: heirloom-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        value: YOUR_DATABASE_URL
+      - key: JWT_SECRET
+        value: YOUR_SECRET_KEY
+      - key: VITE_API_URL
+        value: YOUR_API_URL
+
+    # Define static site settings for frontend
+    staticPublishPath: client/dist
+
+

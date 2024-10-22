@@ -25,6 +25,11 @@ app.use(express.json());
 // Serve static files from the frontend (adjust the path as necessary)
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/memoir', memoirRoutes);
