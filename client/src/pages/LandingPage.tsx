@@ -6,9 +6,11 @@ const LandingPage = () => {
     <div
       className="min-h-screen flex flex-col relative bg-cover bg-fixed bg-center bg-no-repeat"
       style={{
-        backgroundImage: 'url(/LandingBasicBG.svg)', 
-        backgroundSize: 'cover', 
-        height: '100vh',
+        backgroundImage: `url(/InternalLandingBG.svg)`, 
+        backgroundPosition: 'top',
+        backgroundSize: 'cover',
+        paddingTop: '75px', // Adjust based on the height of your header
+      
       }}
     >
       {/* Custom navigation links at the top-right */}
