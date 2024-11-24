@@ -1,4 +1,4 @@
-const MEMOIR_API_URL = `${import.meta.env.VITE_API_URL}/memoir`; // Make sure this URL is correct
+const MEMOIR_API_URL = '/api/memoir'; // Make sure this URL is correct
 
 // Define Memoir and MemoirData types
 interface Memoir {

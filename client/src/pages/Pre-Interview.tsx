@@ -25,7 +25,7 @@ const PreInterview = () => {
     const token = localStorage.getItem('token'); // Ensure token is present
 
     try {
-      const response = await fetch('http://localhost:3001/api/pre-interview', {
+      const response = await fetch('/api/pre-interview', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
