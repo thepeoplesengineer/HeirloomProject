@@ -9,7 +9,7 @@ const LandingPage = () => {
         backgroundImage: `url(/InternalLandingBG.svg)`, 
         backgroundPosition: 'top',
         backgroundSize: 'cover',
-        paddingTop: '75px', // Adjust based on the height of your header
+        paddingTop: '75px', 
       
       }}
     >

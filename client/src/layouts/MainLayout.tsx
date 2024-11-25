@@ -1,18 +1,13 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import backgroundImage from '../assets/InternalLandingBG.svg'; 
 
 const MainLayout = () => {
-  const location = useLocation();
-
-  // Exclude Header and Footer for the landing page
-  const isLandingPage = location.pathname === '/';
-
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
-      
-      {!isLandingPage && <Header />}
+      {/* Always render Header */}
+      <Header />
 
       {/* Main content */}
       <div
@@ -29,8 +24,8 @@ const MainLayout = () => {
         </main>
       </div>
 
-      {/* Conditionally render Footer */}
-      {!isLandingPage && <Footer />}
+      {/* Always render Footer */}
+      <Footer />
     </div>
   );
 };
