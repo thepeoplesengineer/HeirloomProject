@@ -34,8 +34,8 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen justify-center bg-transparent"> 
-      <div className="flex-grow flex items-center justify-center">
+    <div className="flex flex-col min-h-screen justify-start bg-transparent">
+      <div className="flex-grow flex items-start justify-center mt-12">
         <form onSubmit={handleSubmit} className="p-8 bg-[#3b2b29] shadow-md rounded-lg w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 custom-font text-eggshell text-center">Register</h2>
 
@@ -50,7 +50,7 @@ const Register = () => {
               value={formData.username}
               onChange={handleChange}
               required
-              className="w-full px-10 py-2 border border-eggshell bg-[#1c1a1a] text-eggshell rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-eggshell bg-[#1c1a1a] text-eggshell rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -83,7 +83,7 @@ const Register = () => {
           {/* Submit button */}
           <button
             type="submit"
-            className="w-full py-3 outline-black bg-eggshell text-white font-bold rounded-md hover:bg-black transition"
+            className="w-full py-3 bg-eggshell text-black font-bold rounded-md hover:bg-black hover:text-eggshell transition"
             disabled={loading}
           >
             {loading ? 'Registering...' : 'Register'}
@@ -98,8 +98,6 @@ const Register = () => {
           </p>
         </form>
       </div>
-
-      
     </div>
   );
 };

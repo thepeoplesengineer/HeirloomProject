@@ -31,8 +31,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen justify-center bg-transparent">
-      <div className="flex-grow flex items-center justify-center">
+    <div className="flex flex-col min-h-screen justify-start bg-transparent">
+      {/* Add a small spacing between the header and the form */}
+      <div className="flex-grow flex items-start justify-center mt-12">
         <form onSubmit={handleSubmit} className="p-8 bg-[#3b2b29] shadow-md rounded-lg w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 custom-font text-eggshell text-center">Login</h2>
 
@@ -67,7 +68,7 @@ const Login = () => {
           {/* Submit button */}
           <button
             type="submit"
-            className="w-full py-3 bg-eggshell text-white font-bold rounded-md hover:bg-black transition"
+            className="w-full py-3 bg-eggshell text-black font-bold rounded-md hover:bg-black hover:text-eggshell transition"
             disabled={loading}
           >
             {loading ? 'Logging in...' : 'Login'}
@@ -82,10 +83,7 @@ const Login = () => {
           </p>
         </form>
       </div>
-
-      
     </div>
-    
   );
 };
 

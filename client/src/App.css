@@ -14,30 +14,40 @@
 }
 
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  background-color: rgba(9, 9, 9, 0.977);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Add spacing to reduce gap between Header and form */
+body {
+  margin: 0;
+  padding: 0;
 }
 
+.custom-font {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+/* Adjust spacing and alignment for form container */
+.flex-grow {
+  margin-top: 20px; /* Adds a small gap between header and form */
+}
+
+/* Background settings for overall aesthetic */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgba(9, 9, 9, 0.977);
+}
 
 a {
   text-decoration: none;
 }
 
-
 button {
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
